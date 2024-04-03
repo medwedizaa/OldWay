@@ -3,10 +3,12 @@ package com.example.oldway.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.oldway.R
 import com.example.oldway.Track
+import com.example.oldway.databinding.ItemTrackBinding
 
 class MyListAdapter(
 //    private val list: List<Track>
@@ -19,9 +21,9 @@ class MyListAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_track, parent, false)
-        return MyViewHolder(view)
+        val binding = ItemTrackBinding//LayoutInflater.from(parent.context)
+            .inflate(LayoutInflater.from(parent.context), parent, false)
+        return MyViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -29,16 +31,22 @@ class MyListAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.textView.text = myList[position].name
+        holder.bind(myList[position])
     }
 
     class MyViewHolder(
-        private val view: View
-    ) : RecyclerView.ViewHolder(view) {
-        val textView: TextView
-
-        init {
-            textView = view.findViewById(R.id.track_name)
+        private val binding: ItemTrackBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: Track) {
+            val minutes: Int = item.duration / 60
+            val secunds: Int = item.duration % 60
+            binding.trackName.text = item.name
+            binding.artistName.text = item.artist
+            binding.trackDuration.text = binding.root.resources.getString(
+                R.string.track_duration_placeholder,
+                minutes,
+                secunds
+            )
         }
     }
 }

@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.oldway.adapters.MyListAdapter
 import com.example.oldway.databinding.FragmentMainBinding
+
 
 class MainFragment: Fragment() {
 
@@ -33,6 +35,7 @@ class MainFragment: Fragment() {
         val myAdapter: MyListAdapter = MyListAdapter()
         binding?.myList?.adapter = myAdapter
         myAdapter.setList(trackList)
+
     }
 
 }

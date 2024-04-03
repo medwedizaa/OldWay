@@ -11,6 +11,7 @@
     <string name="condition_enabled">Состояние - включено</string>
     <string name="condition_disables">Состояние - выключено</string>
     <string name="welcome_title">Welcome to my application</string>
+    <string name="track_duration_placeholder">%1$d:%2$d</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
