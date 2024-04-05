@@ -52,4 +52,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation("androidx.fragment:fragment-ktx:$fragment_version")
+    implementation("com.squareup.picasso:picasso:2.8")
 }

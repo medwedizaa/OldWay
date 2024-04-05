@@ -29,7 +29,22 @@ class MainFragment: Fragment() {
         val trackList = listOf<Track>(
             Track(name = "name1", duration = 354, artist = "artist1"),
             Track(name = "name2", duration = 354, artist = "artist2"),
-            Track(name = "name3", duration = 354, artist = "artist3")
+            Track(name = "name3", duration = 354, artist = "artist3"),
+            Track(name = "name1", duration = 354, artist = "artist1"),
+            Track(name = "name2", duration = 354, artist = "artist2"),
+            Track(name = "name3", duration = 354, artist = "artist3"),
+            Track(name = "name1", duration = 354, artist = "artist1"),
+            Track(name = "name2", duration = 354, artist = "artist2"),
+            Track(name = "name3", duration = 354, artist = "artist3"),
+            Track(name = "name1", duration = 354, artist = "artist1"),
+            Track(name = "name2", duration = 354, artist = "artist2"),
+            Track(name = "name3", duration = 354, artist = "artist3"),
+            Track(name = "name1", duration = 354, artist = "artist1"),
+            Track(name = "name2", duration = 354, artist = "artist2"),
+            Track(name = "name3", duration = 354, artist = "artist3"),
+            Track(name = "name1", duration = 354, artist = "artist1"),
+            Track(name = "name2", duration = 354, artist = "artist2"),
+            Track(name = "name3", duration = 354, artist = "artist3"),
         )
 
         val myAdapter: MyListAdapter = MyListAdapter()
@@ -43,5 +58,6 @@ class MainFragment: Fragment() {
 data class Track(
     val name: String,
     val duration: Int,
-    val artist: String
+    val artist: String,
+    val image: String = "https://cdn-icons-png.flaticon.com/512/2402/2402463.png"
 )

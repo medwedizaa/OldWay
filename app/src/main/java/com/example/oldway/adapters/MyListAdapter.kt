@@ -1,14 +1,12 @@
 package com.example.oldway.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.oldway.R
 import com.example.oldway.Track
 import com.example.oldway.databinding.ItemTrackBinding
+import com.squareup.picasso.Picasso
 
 class MyListAdapter(
 //    private val list: List<Track>
@@ -40,6 +38,7 @@ class MyListAdapter(
         fun bind(item: Track) {
             val minutes: Int = item.duration / 60
             val secunds: Int = item.duration % 60
+            Picasso.get().load(item.image).into(binding.trackImage)
             binding.trackName.text = item.name
             binding.artistName.text = item.artist
             binding.trackDuration.text = binding.root.resources.getString(
